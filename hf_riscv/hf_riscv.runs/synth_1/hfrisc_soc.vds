@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Sep 18 17:42:13 2025
+# Process ID         : 37656
+# Current directory  : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/hf_riscv/hf_riscv.runs/synth_1
+# Command line       : vivado -log hfrisc_soc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hfrisc_soc.tcl
+# Log file           : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/hf_riscv/hf_riscv.runs/synth_1/hfrisc_soc.vds
+# Journal file       : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/hf_riscv/hf_riscv.runs/synth_1/vivado.jou
+# Running On         : laptop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
+# CPU Frequency      : 833.396 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 16467 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18614 MB
+# Available Virtual  : 13152 MB
+#-----------------------------------------------------------
+source hfrisc_soc.tcl -notrace
+Command: synth_design -top hfrisc_soc -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 37696
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1884.508 ; gain = 428.801 ; free physical = 249 ; free virtual = 11436
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-10929] literal value 'b1111 truncated to fit in 1 bits [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/platform/artix7_nexysA7/artix7_nexysa7_basic_soc.v:137]
+INFO: [Synth 8-6157] synthesizing module 'hfrisc_soc' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/platform/artix7_nexysA7/artix7_nexysa7_basic_soc.v:1]
+INFO: [Synth 8-6157] synthesizing module 'processor' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/cpu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'control' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/control.v:1]
+INFO: [Synth 8-226] default block is never used [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/control.v:263]
+INFO: [Synth 8-226] default block is never used [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/control.v:392]
+INFO: [Synth 8-6155] done synthesizing module 'control' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'reg_bank' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/reg_bank.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'reg_bank' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/reg_bank.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'bshift' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/bshifter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'bshift' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/bshifter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/alu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/datapath.v:1]
+INFO: [Synth 8-6157] synthesizing module 'interrupt_controller' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/int_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'interrupt_controller' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/int_control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (0#1) [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/core_rv32e_verilog/cpu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'peripherals' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/devices/peripherals/basic_soc.v:11]
+ERROR: [Synth 8-439] module 'uart' not found [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/devices/peripherals/basic_soc.v:535]
+ERROR: [Synth 8-6156] failed synthesizing module 'peripherals' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/devices/peripherals/basic_soc.v:11]
+ERROR: [Synth 8-6156] failed synthesizing module 'hfrisc_soc' [/home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/riscv/platform/artix7_nexysA7/artix7_nexysa7_basic_soc.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1957.477 ; gain = 501.770 ; free physical = 224 ; free virtual = 11412
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 1 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Thu Sep 18 17:42:33 2025...

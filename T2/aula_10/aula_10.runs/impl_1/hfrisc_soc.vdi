@@ -1,0 +1,88 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Thu Oct  2 19:02:08 2025
+# Process ID         : 389943
+# Current directory  : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/aula_10/aula_10.runs/impl_1
+# Command line       : vivado -log hfrisc_soc.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source hfrisc_soc.tcl -notrace
+# Log file           : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/aula_10/aula_10.runs/impl_1/hfrisc_soc.vdi
+# Journal file       : /home/lucas/Desktop/facul/a2025_2/CSD/T2/hf-risc/aula_10/aula_10.runs/impl_1/vivado.jou
+# Running On         : laptop
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i7-1355U
+# CPU Frequency      : 3699.962 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 16467 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18614 MB
+# Available Virtual  : 10590 MB
+#-----------------------------------------------------------
+source hfrisc_soc.tcl -notrace
+Command: open_checkpoint hfrisc_soc_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1474.742 ; gain = 0.000 ; free physical = 314 ; free virtual = 9685
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1489.641 ; gain = 0.000 ; free physical = 401 ; free virtual = 9753
+INFO: [Netlist 29-17] Analyzing 1258 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1567.391 ; gain = 2.000 ; free physical = 294 ; free virtual = 9646
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 363 ; free virtual = 8994
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 363 ; free virtual = 8994
+Read PlaceDB: Time (s): cpu = 00:00:00.22 ; elapsed = 00:00:00.21 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 364 ; free virtual = 8995
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 364 ; free virtual = 8995
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 356 ; free virtual = 8987
+Read Physdb Files: Time (s): cpu = 00:00:00.36 ; elapsed = 00:00:00.26 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 356 ; free virtual = 8987
+Restored from archive | CPU: 0.400000 secs | Memory: 13.091164 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.39 ; elapsed = 00:00:00.29 . Memory (MB): peak = 2189.844 ; gain = 7.938 ; free physical = 356 ; free virtual = 8987
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2189.844 ; gain = 0.000 ; free physical = 356 ; free virtual = 8987
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1069 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 31 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 1024 instances
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 10 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 4 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2024.2 (64-bit) build 5239630
+WARNING: [Vivado 12-23575] Critical violations of the methodology design rules detected. Critical violations may contribute to timing failures or cause functional issues in hardware. Run report_methodology for more information.
+open_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2189.844 ; gain = 715.102 ; free physical = 356 ; free virtual = 8987
+Command: write_bitstream -force hfrisc_soc.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/lucas/Vivado/2024.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado 12-3199] DRC finished with 0 Errors
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./hfrisc_soc.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-1876] WebTalk data collection is mandatory when using a ULT device. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-83] Releasing license: Implementation
+23 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:23 ; elapsed = 00:00:10 . Memory (MB): peak = 2772.043 ; gain = 582.199 ; free physical = 347 ; free virtual = 8433
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  2 19:02:30 2025...

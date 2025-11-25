@@ -1,0 +1,430 @@
+
+Discarded input sections
+
+ .data          0x0000000000000000        0x0 crt0.o
+ .bss           0x0000000000000000        0x0 crt0.o
+ .text          0x0000000000000000        0x0 interrupt.o
+ .data          0x0000000000000000        0x0 interrupt.o
+ .bss           0x0000000000000000        0x0 interrupt.o
+ .rodata.exception_handler.str1.4
+                0x0000000000000000       0x2c interrupt.o
+ .text.exception_handler
+                0x0000000000000000       0x38 interrupt.o
+ .data.adc_vector
+                0x0000000000000000       0x10 interrupt.o
+ .data.dac_vector
+                0x0000000000000000       0x10 interrupt.o
+ .data.i2c_vector
+                0x0000000000000000       0x10 interrupt.o
+ .data.spi_vector
+                0x0000000000000000       0x10 interrupt.o
+ .data.uart_vector
+                0x0000000000000000       0x40 interrupt.o
+ .text          0x0000000000000000        0x0 keyboard_axi.o
+ .data          0x0000000000000000        0x0 keyboard_axi.o
+ .bss           0x0000000000000000        0x0 keyboard_axi.o
+ .text.sw_axi   0x0000000000000000       0x24 keyboard_axi.o
+ .text          0x0000000000000000        0x0 libc.o
+ .data          0x0000000000000000        0x0 libc.o
+ .bss           0x0000000000000000        0x0 libc.o
+ .text.delay_ms
+                0x0000000000000000      0x110 libc.o
+ .text.delay_us
+                0x0000000000000000      0x10c libc.o
+ .text.map      0x0000000000000000       0x54 libc.o
+ .text.putchar  0x0000000000000000       0x1c libc.o
+ .text.kbhit    0x0000000000000000       0x10 libc.o
+ .text.getchar  0x0000000000000000       0x1c libc.o
+ .text.strcpy   0x0000000000000000       0x1c libc.o
+ .text.strncpy  0x0000000000000000       0x4c libc.o
+ .text.strcat   0x0000000000000000       0x4c libc.o
+ .text.strncat  0x0000000000000000       0x48 libc.o
+ .text.strcmp   0x0000000000000000       0x2c libc.o
+ .text.strncmp  0x0000000000000000       0x3c libc.o
+ .text.strstr   0x0000000000000000       0x50 libc.o
+ .text.strlen   0x0000000000000000       0x28 libc.o
+ .text.strchr   0x0000000000000000       0x24 libc.o
+ .text.strpbrk  0x0000000000000000       0x44 libc.o
+ .text.strsep   0x0000000000000000       0x60 libc.o
+ .text.strtok   0x0000000000000000       0x90 libc.o
+ .text.memcpy   0x0000000000000000       0x24 libc.o
+ .text.memmove  0x0000000000000000       0x4c libc.o
+ .text.memcmp   0x0000000000000000       0x3c libc.o
+ .text.memset   0x0000000000000000       0x20 libc.o
+ .text.strtol   0x0000000000000000      0x120 libc.o
+ .text.atoi     0x0000000000000000       0xb8 libc.o
+ .text.atof     0x0000000000000000      0x210 libc.o
+ .text.itoa     0x0000000000000000      0x1c8 libc.o
+ .text.ftoa     0x0000000000000000      0x178 libc.o
+ .text.puts     0x0000000000000000       0x50 libc.o
+ .text.gets     0x0000000000000000       0x48 libc.o
+ .text.getline  0x0000000000000000       0x50 libc.o
+ .text.abs      0x0000000000000000       0x10 libc.o
+ .text.random   0x0000000000000000       0x60 libc.o
+ .text.srand    0x0000000000000000        0xc libc.o
+ .rodata.hexdump.str1.4
+                0x0000000000000000       0x13 libc.o
+ .text.hexdump  0x0000000000000000      0x144 libc.o
+ .text.sprintf  0x0000000000000000       0x40 libc.o
+ .text.__mulsi3
+                0x0000000000000000       0x30 libc.o
+ .text.__muldsi3
+                0x0000000000000000       0xf8 libc.o
+ .text.__muldi3
+                0x0000000000000000       0x98 libc.o
+ .text.__udivmodsi4
+                0x0000000000000000       0x78 libc.o
+ .text.__divsi3
+                0x0000000000000000       0x7c libc.o
+ .text.__modsi3
+                0x0000000000000000       0x6c libc.o
+ .text.__ashldi3
+                0x0000000000000000       0x38 libc.o
+ .text.__ashrdi3
+                0x0000000000000000       0x2c libc.o
+ .text.__lshrdi3
+                0x0000000000000000       0x38 libc.o
+ .text.__udivmoddi4
+                0x0000000000000000      0x164 libc.o
+ .text.__umoddi3
+                0x0000000000000000       0xfc libc.o
+ .text.__udivdi3
+                0x0000000000000000      0x16c libc.o
+ .text.__moddi3
+                0x0000000000000000      0x15c libc.o
+ .text.__divdi3
+                0x0000000000000000      0x1c8 libc.o
+ .text.__addsf3
+                0x0000000000000000      0x144 libc.o
+ .text.__subsf3
+                0x0000000000000000       0x28 libc.o
+ .text.__cmpsf2
+                0x0000000000000000       0x44 libc.o
+ .text.__ltsf2  0x0000000000000000       0x34 libc.o
+ .text.__lesf2  0x0000000000000000       0x44 libc.o
+ .text.__gtsf2  0x0000000000000000       0x44 libc.o
+ .text.__gesf2  0x0000000000000000       0x34 libc.o
+ .text.__eqsf2  0x0000000000000000        0xc libc.o
+ .text.__nesf2  0x0000000000000000        0xc libc.o
+ .text.__mulsf3
+                0x0000000000000000      0x138 libc.o
+ .text.__divsf3
+                0x0000000000000000       0xc4 libc.o
+ .text.__negsf2
+                0x0000000000000000       0x18 libc.o
+ .text.__fixsfsi
+                0x0000000000000000       0x4c libc.o
+ .text.__fixunssfsi
+                0x0000000000000000       0x4c libc.o
+ .text.__floatsisf
+                0x0000000000000000       0xa8 libc.o
+ .text.__floatunsisf
+                0x0000000000000000       0x84 libc.o
+ .text.__floatsidf
+                0x0000000000000000       0x8c libc.o
+ .text.__floatdidf
+                0x0000000000000000       0xc0 libc.o
+ .text.__negdf2
+                0x0000000000000000       0x28 libc.o
+ .text.__extendsfdf2
+                0x0000000000000000       0x48 libc.o
+ .text.__truncdfsf2
+                0x0000000000000000       0xa4 libc.o
+ .text.__cmpdf2
+                0x0000000000000000       0x50 libc.o
+ .text.__fixdfsi
+                0x0000000000000000       0x8c libc.o
+ .text.__fixdfdi
+                0x0000000000000000       0xc4 libc.o
+ .text.__fixunsdfsi
+                0x0000000000000000       0x58 libc.o
+ .text.__fixunsdfdi
+                0x0000000000000000       0x7c libc.o
+ .text.__adddf3
+                0x0000000000000000      0x268 libc.o
+ .text.__subdf3
+                0x0000000000000000       0x40 libc.o
+ .text.__muldf3
+                0x0000000000000000      0x214 libc.o
+ .text.__divdf3
+                0x0000000000000000      0x1e8 libc.o
+ .text.__gtdf2  0x0000000000000000       0xac libc.o
+ .text.__gedf2  0x0000000000000000       0xac libc.o
+ .text.__ltdf2  0x0000000000000000       0xa8 libc.o
+ .text.__ledf2  0x0000000000000000       0xac libc.o
+ .text.__eqdf2  0x0000000000000000       0x14 libc.o
+ .text.__nedf2  0x0000000000000000       0x14 libc.o
+ .srodata.cst4  0x0000000000000000       0x14 libc.o
+ .srodata.cst8  0x0000000000000000        0x8 libc.o
+ .sbss.last.0   0x0000000000000000        0x4 libc.o
+ .sdata.rand1   0x0000000000000000        0x4 libc.o
+ .text          0x0000000000000000        0x0 malloc.o
+ .data          0x0000000000000000        0x0 malloc.o
+ .bss           0x0000000000000000        0x0 malloc.o
+ .text.free     0x0000000000000000       0x20 malloc.o
+ .text.malloc   0x0000000000000000       0xc0 malloc.o
+ .text.heap_init
+                0x0000000000000000       0x38 malloc.o
+ .sbss.first_free
+                0x0000000000000000        0x4 malloc.o
+ .sbss.last_free
+                0x0000000000000000        0x4 malloc.o
+ .comment       0x0000000000000000       0x10 malloc.o
+ .riscv.attributes
+                0x0000000000000000       0x1c malloc.o
+ .text          0x0000000000000000        0x0 math.o
+ .data          0x0000000000000000        0x0 math.o
+ .bss           0x0000000000000000        0x0 math.o
+ .text.xatan    0x0000000000000000      0x158 math.o
+ .text.satan    0x0000000000000000      0x104 math.o
+ .text.fabs     0x0000000000000000       0x3c math.o
+ .text.frexp    0x0000000000000000       0x8c math.o
+ .text.ldexp    0x0000000000000000      0x19c math.o
+ .text.modf     0x0000000000000000       0xb8 math.o
+ .text.sinus    0x0000000000000000      0x26c math.o
+ .text.floor    0x0000000000000000       0xa4 math.o
+ .text.exp.part.0
+                0x0000000000000000      0x178 math.o
+ .text.ceil     0x0000000000000000       0xc4 math.o
+ .text.sqrt     0x0000000000000000      0x28c math.o
+ .text.exp      0x0000000000000000       0xac math.o
+ .text.log      0x0000000000000000      0x27c math.o
+ .text.log10    0x0000000000000000       0x2c math.o
+ .text.pow      0x0000000000000000      0x1f0 math.o
+ .text.cos      0x0000000000000000       0x44 math.o
+ .text.sin      0x0000000000000000        0xc math.o
+ .text.tan      0x0000000000000000      0x2e0 math.o
+ .text.atan     0x0000000000000000       0x68 math.o
+ .text.atan2    0x0000000000000000      0x17c math.o
+ .text.asin     0x0000000000000000      0x19c math.o
+ .text.acos     0x0000000000000000       0x88 math.o
+ .text.sinh     0x0000000000000000      0x3a0 math.o
+ .text.cosh     0x0000000000000000      0x220 math.o
+ .text.tanh     0x0000000000000000       0xac math.o
+ .srodata.cst4  0x0000000000000000      0x120 math.o
+ .srodata.cst8  0x0000000000000000       0x18 math.o
+ .comment       0x0000000000000000       0x10 math.o
+ .riscv.attributes
+                0x0000000000000000       0x1c math.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+ram              0x0000000040000000 0x0000000000008000 xrw
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                0x0000000000000800                _stack_size = 0x800
+                0x0000000040008000                _stack = _stack_start
+                0x0000000040008000                _stack_start = (ORIGIN (ram) + LENGTH (ram))
+                0x0000000040007800                _stack_end = (_stack_start - _stack_size)
+                0x000000004000183c                _heap_start = _ebss
+                0x0000000040007800                _heap_end = _stack_end
+                0x0000000000005fc4                _heap_size = (_stack_end - _ebss)
+
+.text           0x0000000040000000     0x1094
+                0x0000000040000000                _text = .
+ *(.vector_core*)
+ *(.text.init)
+ *(.text)
+ .text          0x0000000040000000      0x1f8 crt0.o
+                0x0000000040000000                _entry
+                0x00000000400000e0                _bootsignature
+                0x0000000040000100                _isr
+                0x0000000040000198                _interrupt_set
+                0x00000000400001b0                setjmp
+                0x00000000400001d0                longjmp
+                0x00000000400001f0                syscall
+ *(.text.*)
+ .text.dummy_handler
+                0x00000000400001f8        0xc interrupt.o
+                0x00000000400001f8                timer0a_handler
+                0x00000000400001f8                irq4_handler
+                0x00000000400001f8                spi0_handler
+                0x00000000400001f8                uart7tx_handler
+                0x00000000400001f8                uart6tx_handler
+                0x00000000400001f8                irq2_handler
+                0x00000000400001f8                adc2_handler
+                0x00000000400001f8                timer4ocr_handler
+                0x00000000400001f8                irq7_handler
+                0x00000000400001f8                timer1ovf_handler
+                0x00000000400001f8                timer3ocr_handler
+                0x00000000400001f8                timer7ctc_handler
+                0x00000000400001f8                uart7rx_handler
+                0x00000000400001f8                uart4tx_handler
+                0x00000000400001f8                timer3ovf_handler
+                0x00000000400001f8                uart2rx_handler
+                0x00000000400001f8                timer2ovf_handler
+                0x00000000400001f8                porta_handler
+                0x00000000400001f8                uart3rx_handler
+                0x00000000400001f8                portd_handler
+                0x00000000400001f8                uart2tx_handler
+                0x00000000400001f8                uart3tx_handler
+                0x00000000400001f8                portc_handler
+                0x00000000400001f8                uart0rx_handler
+                0x00000000400001f8                timer5ovf_handler
+                0x00000000400001f8                timer7ovf_handler
+                0x00000000400001f8                dummy_handler
+                0x00000000400001f8                irq3_handler
+                0x00000000400001f8                adc3_handler
+                0x00000000400001f8                timer6ctc_handler
+                0x00000000400001f8                irq1_handler
+                0x00000000400001f8                adc1_handler
+                0x00000000400001f8                i2c1_handler
+                0x00000000400001f8                spi2_handler
+                0x00000000400001f8                irq6_handler
+                0x00000000400001f8                timer4ctc_handler
+                0x00000000400001f8                dac2_handler
+                0x00000000400001f8                timer5ctc_handler
+                0x00000000400001f8                uart0tx_handler
+                0x00000000400001f8                timer4ovf_handler
+                0x00000000400001f8                portb_handler
+                0x00000000400001f8                dac0_handler
+                0x00000000400001f8                uart5tx_handler
+                0x00000000400001f8                timer0b_handler
+                0x00000000400001f8                spi1_handler
+                0x00000000400001f8                uart1tx_handler
+                0x00000000400001f8                timer6ovf_handler
+                0x00000000400001f8                i2c0_handler
+                0x00000000400001f8                spi3_handler
+                0x00000000400001f8                dac1_handler
+                0x00000000400001f8                uart1rx_handler
+                0x00000000400001f8                timer6ocr_handler
+                0x00000000400001f8                uart6rx_handler
+                0x00000000400001f8                uart5rx_handler
+                0x00000000400001f8                timer2ocr_handler
+                0x00000000400001f8                timer2ctc_handler
+                0x00000000400001f8                timer7ocr_handler
+                0x00000000400001f8                timer5ocr_handler
+                0x00000000400001f8                adc0_handler
+                0x00000000400001f8                timer3ctc_handler
+                0x00000000400001f8                timer1ctc_handler
+                0x00000000400001f8                i2c2_handler
+                0x00000000400001f8                dac3_handler
+                0x00000000400001f8                i2c3_handler
+                0x00000000400001f8                timer1ocr_handler
+                0x00000000400001f8                uart4rx_handler
+                0x00000000400001f8                irq5_handler
+ .text.irq0_handler
+                0x0000000040000204      0x224 interrupt.o
+                0x0000000040000204                irq0_handler
+ .text.irq_enable
+                0x0000000040000428       0x34 interrupt.o
+                0x0000000040000428                irq_enable
+ .text.irq_handler
+                0x000000004000045c       0x50 interrupt.o
+                0x000000004000045c                irq_handler
+ .text.print_key_name
+                0x00000000400004ac      0x5b8 keyboard_axi.o
+                0x00000000400004ac                print_key_name
+ .text.startup.main
+                0x0000000040000a64       0x54 keyboard_axi.o
+                0x0000000040000a64                main
+ .text.vsprintf
+                0x0000000040000ab8      0x4e0 libc.o
+ .text.printf   0x0000000040000f98       0x40 libc.o
+                0x0000000040000f98                printf
+ .text.__udivsi3
+                0x0000000040000fd8       0x68 libc.o
+                0x0000000040000fd8                __udivsi3
+ .text.__umodsi3
+                0x0000000040001040       0x54 libc.o
+                0x0000000040001040                __umodsi3
+                0x0000000040001094                _etext = .
+
+.rodata         0x0000000040001094      0x71c
+                0x0000000040001094                . = ALIGN (0x4)
+                0x0000000040001094                _rodata = .
+ *(.rdata)
+ *(.rodata)
+ *(.rodata*)
+ .rodata.dummy_handler.str1.4
+                0x0000000040001094        0x5 interrupt.o
+ *fill*         0x0000000040001099        0x3 
+ .rodata.irq0_handler.str1.4
+                0x000000004000109c       0x25 interrupt.o
+ *fill*         0x00000000400010c1        0x3 
+ .rodata.irq0_handler
+                0x00000000400010c4       0x84 interrupt.o
+ .rodata.print_key_name.str1.4
+                0x0000000040001148      0x236 keyboard_axi.o
+                                        0x242 (size before relaxing)
+ *fill*         0x000000004000137e        0x2 
+ .rodata.print_key_name
+                0x0000000040001380      0x388 keyboard_axi.o
+ .rodata.main.str1.4
+                0x0000000040001708        0x7 keyboard_axi.o
+ *fill*         0x000000004000170f        0x1 
+ .rodata.vsprintf.str1.4
+                0x0000000040001710       0x19 libc.o
+ *fill*         0x0000000040001729        0x3 
+ .rodata.vsprintf
+                0x000000004000172c       0x84 libc.o
+                0x00000000400017b0                . = ALIGN (0x4)
+                0x00000000400017b0                _erodata = .
+
+.rela.dyn       0x00000000400017b0        0x0
+ .rela.text     0x00000000400017b0        0x0 crt0.o
+ .rela.data.gpio_vector
+                0x00000000400017b0        0x0 crt0.o
+ .rela.data.irq_vector
+                0x00000000400017b0        0x0 crt0.o
+ .rela.data.timer_vector
+                0x00000000400017b0        0x0 crt0.o
+
+.data           0x00000000400017b0       0x8c
+                0x00000000400017b0                . = ALIGN (0x4)
+                0x00000000400017b0                _data = .
+ *(.data)
+ *(.data*)
+ .data.gpio_vector
+                0x00000000400017b0       0x10 interrupt.o
+                0x00000000400017b0                gpio_vector
+ .data.irq_vector
+                0x00000000400017c0       0x20 interrupt.o
+                0x00000000400017c0                irq_vector
+ .data.timer_vector
+                0x00000000400017e0       0x5c interrupt.o
+                0x00000000400017e0                timer_vector
+                0x000000004000203c                _gp = (. + 0x800)
+ *(.sdata)
+ *(.sdata.*)
+                0x000000004000183c                . = ALIGN (0x4)
+                0x000000004000183c                _edata = .
+
+.bss            0x000000004000183c        0x0
+                0x000000004000183c                . = ALIGN (0x4)
+                0x000000004000183c                _sbss = .
+ *(.sbss)
+ *(.sbss.*)
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x000000004000183c                . = ALIGN (0x4)
+                0x000000004000183c                _ebss = .
+                0x000000004000183c                _end = .
+LOAD crt0.o
+LOAD interrupt.o
+LOAD keyboard_axi.o
+LOAD libc.o
+LOAD malloc.o
+LOAD math.o
+OUTPUT(test.elf elf32-littleriscv)
+
+.riscv.attributes
+                0x0000000000000000       0x1c
+ .riscv.attributes
+                0x0000000000000000       0x1a crt0.o
+ .riscv.attributes
+                0x000000000000001a       0x1c interrupt.o
+ .riscv.attributes
+                0x0000000000000036       0x1c keyboard_axi.o
+ .riscv.attributes
+                0x0000000000000052       0x1c libc.o
+
+.comment        0x0000000000000000        0xf
+ .comment       0x0000000000000000        0xf interrupt.o
+                                         0x10 (size before relaxing)
+ .comment       0x000000000000000f       0x10 keyboard_axi.o
+ .comment       0x000000000000000f       0x10 libc.o
