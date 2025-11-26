@@ -449,6 +449,11 @@ vga_sprite: crt
 	$(GCC_$(ARCH)) -o vga_sprite.o app/vga/vga_sprite.c
 	@$(MAKE) --no-print-directory link
 
+space_invaders: crt
+	$(GCC_$(ARCH)) -o vga_drv.o app/vga/vga_drv.c
+	$(GCC_$(ARCH)) -o vga_space_invaders.o app/vga/vga_space_invaders.c
+	@$(MAKE) --no-print-directory link
+
 core_wrapper: crt
 	$(GCC_$(ARCH)) -o core_wrapper.o app/core_wrapper.c
 	@$(MAKE) --no-print-directory link
