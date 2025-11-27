@@ -124,6 +124,7 @@ struct Jogo {
   unsigned char direcao_inimigos;
   unsigned char velocidade_inimigos;
   unsigned char inimigos_restantes;
+  unsigned char contador_tiro;
 };
 
 /* Variáveis globais */
@@ -224,8 +225,10 @@ void limpar_tiros_inativos() {
     if (tiros[i].ativo) {
       /* Remove tiros que saíram da tela */
       if (tiros[i].pos_y <= 0 || tiros[i].pos_y >= VGA_HEIGHT) {
-        tiros[i].ativo = 0;
-        desenhar_objeto(&tiros[i], 0, COR_FUNDO);
+        desenhar_sprite(tiros[i].pos_x_anterior, tiros[i].pos_y_anterior, 
+                       projetilJogador[0], 3, 4, COR_FUNDO);
+		tiros[i].ativo = 0;
+        desenhar_objeto(&tiros[i], 0, COR_FUNDO);  // TESTAR REMOVER ESSA LINHA POR CAUSA DO DESENHAR SPRITE ACIMA
       } else {
         /* Mantém tiro ativo reorganizando o array */
         if (i != j) {
@@ -245,6 +248,7 @@ void criar_tiro_jogador() {
                        jogador.pos_x + (jogador.largura - 3) / 2,
                        jogador.pos_y - 4, 0, -1, 2, 1);
     num_tiros++;
+	estado_jogo.contador_tiro = 0;
   }
 }
 
@@ -271,6 +275,19 @@ void adicionar_pontuacao(unsigned char tipo_inimigo) {
   display_print(texto_pontuacao, 10, 10, 1, COR_TEXTO);
 }
 
+/* Apaga objeto na posição anterior */
+void apagar_objeto_anterior(struct Objeto *obj) {
+  desenhar_sprite(obj->pos_x_anterior, obj->pos_y_anterior, 
+                 obj->quadro_sprite[obj->quadro_atual],
+                 obj->largura, obj->altura, COR_FUNDO);
+}
+
+/* Atualiza posição anterior */
+void atualizar_posicao_anterior(struct Objeto *obj) {
+  obj->pos_x_anterior = obj->pos_x;
+  obj->pos_y_anterior = obj->pos_y;
+}
+
 /* Inicialização do jogo */
 void inicializar_jogo() {
   unsigned char i;
@@ -282,7 +299,8 @@ void inicializar_jogo() {
   estado_jogo.direcao_inimigos = 1;
   estado_jogo.velocidade_inimigos = 20;
   estado_jogo.inimigos_restantes = NUM_INIMIGOS;
-
+  estado_jogo.contador_tiro = 0;
+	
   /* Jogador */
   inicializar_objeto(&jogador, naveJogador[0], naveJogador[0], 13, 8,
                      (VGA_WIDTH - 13) / 2, VGA_HEIGHT - 20, 0, 0, 3, 0);
@@ -323,43 +341,72 @@ void inicializar_jogo() {
 void atualizar_jogo() {
   unsigned char i, j;
 
+  /* Atualiza contador de tiro */
+  estado_jogo.contador_tiro++;
+
   /* Movimento do jogador */
   if (--jogador.contador_velocidade == 0) {
     jogador.contador_velocidade = jogador.velocidade;
 
+    /* Armazena posição anterior */
+    atualizar_posicao_anterior(&jogador);
+
     /* Limites da tela */
-    if (jogador.pos_x + jogador.dir_x >= 0 &&
-        jogador.pos_x + jogador.largura + jogador.dir_x <= VGA_WIDTH) {
-      jogador.pos_x += jogador.dir_x;
+    int nova_pos_x = jogador.pos_x + jogador.dir_x;
+    if (nova_pos_x >= 0 && nova_pos_x + jogador.largura <= VGA_WIDTH) {
+      jogador.pos_x = nova_pos_x;
     }
+
+    /* Apaga na posição anterior e desenha na nova */
+    apagar_objeto_anterior(&jogador);
+    desenhar_objeto(&jogador, 0, COR_NAVE);
   }
 
-  /* Movimento dos inimigos em formação */
+  /* Movimento dos inimigos em formação - com eliminação de efeito fantasma */
   contador_animacao++;
   if (contador_animacao >= estado_jogo.velocidade_inimigos) {
     contador_animacao = 0;
+    
+    /* Primeiro apaga todos os inimigos nas posições anteriores */
+    for (i = 0; i < NUM_INIMIGOS; i++) {
+      if (inimigos[i].ativo) {
+        apagar_objeto_anterior(&inimigos[i]);
+        atualizar_posicao_anterior(&inimigos[i]);
+      }
+    }
+    
+    /* Move a formação */
     mover_inimigos_em_formacao();
+    
+    /* Desenha todos os inimigos nas novas posições */
+    for (i = 0; i < NUM_INIMIGOS; i++) {
+      if (inimigos[i].ativo) {
+        desenhar_objeto(&inimigos[i], 1, -1); // Com animação
+      }
+    }
   }
 
-  /* Atualiza e move tiros */
+  /* Atualiza e move tiros - com eliminação de efeito fantasma */
   for (i = 0; i < num_tiros; i++) {
     if (tiros[i].ativo) {
-      struct Objeto tiro_anterior = tiros[i];
+      /* Armazena posição anterior */
+      atualizar_posicao_anterior(&tiros[i]);
 
-      if (--tiros[i].contador_velocidade == 0) {
-        tiros[i].contador_velocidade = tiros[i].velocidade;
-        tiros[i].pos_y += tiros[i].dir_y;
-      }
+      /* Move o tiro */
+      tiros[i].pos_y += tiros[i].dir_y;
 
-      /* Verifica colisões */
+      /* Apaga na posição anterior */
+      apagar_objeto_anterior(&tiros[i]);
+
+      /* Verifica colisões com inimigos */
       for (j = 0; j < NUM_INIMIGOS; j++) {
         if (inimigos[j].ativo && verificar_colisao(&tiros[i], &inimigos[j])) {
           /* Colisão com inimigo */
-          desenhar_objeto(&tiros[i], 0, COR_FUNDO);
-          desenhar_objeto(&inimigos[j], 0, COR_FUNDO);
           tiros[i].ativo = 0;
           inimigos[j].ativo = 0;
           adicionar_pontuacao(inimigos[j].tipo);
+          // Apaga o inimigo da tela
+          apagar_objeto_anterior(&inimigos[j]);
           break;
         }
       }
@@ -367,9 +414,8 @@ void atualizar_jogo() {
       /* Verifica colisão com barreiras */
       for (j = 0; j < NUM_BARREIRAS; j++) {
         if (barreiras[j].ativo && verificar_colisao(&tiros[i], &barreiras[j])) {
-          desenhar_objeto(&tiros[i], 0, COR_FUNDO);
           tiros[i].ativo = 0;
-          /* Danifica barreira */
+          /* Danifica barreira - simplificado */
           desenhar_sprite(barreiras[j].pos_x, barreiras[j].pos_y, barreira[0],
                           16, 10, COR_FUNDO);
           break;
@@ -378,29 +424,34 @@ void atualizar_jogo() {
 
       /* Redesenha tiro na nova posição se ainda ativo */
       if (tiros[i].ativo) {
-        desenhar_objeto(&tiro_anterior, 0, COR_FUNDO);
         desenhar_objeto(&tiros[i], 0, COR_TIRO);
       }
     }
   }
 
+  /* Verifica colisão de inimigos com jogador */
+  for (i = 0; i < NUM_INIMIGOS; i++) {
+    if (inimigos[i].ativo && verificar_colisao(&inimigos[i], &jogador)) {
+      estado_jogo.vidas--;
+      // Atualiza display de vidas
+      char texto_vidas[15];
+      sprintf(texto_vidas, "VIDAS:%d", estado_jogo.vidas);
+      display_print("          ", 250, 10, 1, COR_FUNDO);
+      display_print(texto_vidas, 250, 10, 1, COR_TEXTO);
+      
+      // Reseta posição do jogador se ainda tem vidas
+      if (estado_jogo.vidas > 0) {
+        apagar_objeto_anterior(&jogador);
+        jogador.pos_x = (VGA_WIDTH - 13) / 2;
+        jogador.pos_y = VGA_HEIGHT - 20;
+        desenhar_objeto(&jogador, 0, COR_NAVE);
+      }
+      break;
+    }
+  }
+
   /* Limpeza de tiros inativos */
   limpar_tiros_inativos();
-
-  /* Redesenha elementos principais */
-  desenhar_objeto(&jogador, 0, COR_NAVE);
-
-  for (i = 0; i < NUM_INIMIGOS; i++) {
-    if (inimigos[i].ativo) {
-      desenhar_objeto(&inimigos[i], contador_animacao % 10 == 0, -1);
-    }
-  }
-
-  for (i = 0; i < NUM_BARREIRAS; i++) {
-    if (barreiras[i].ativo) {
-      desenhar_objeto(&barreiras[i], 0, COR_BARREIRA);
-    }
-  }
 }
 
 /* Controles com debounce */
